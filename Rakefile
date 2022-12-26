@@ -38,6 +38,6 @@ sh cmd.join(" ")
     sh "wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb"
     sh "sudo dpkg -i #{pwd()}/nvim-linux64.deb"
   end
-end
 
-# $ nvim --headless -c "MasonInstall lua-language-server rust-analyzer" -c qall
+  task :all => [:packer, :slink, :install, :setup]
+end

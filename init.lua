@@ -173,7 +173,11 @@ vim.o.scrolloff = 8
 -- Set colorscheme
 vim.o.termguicolors = true
 
-require("onedark").load()
+-- Suppress warning the first time the file is loaded. The colorscheme cannot
+-- be selected in this case.
+local ok, result = pcall(vim.cmd([[colorscheme onedark]]))
+
+-- require("onedark").load()
 --vim.cmd([[colorscheme onedark]])
 
 -- Set completeopt to have a better completion experience
