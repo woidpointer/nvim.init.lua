@@ -172,7 +172,8 @@ vim.o.wrap = false
 vim.o.scrolloff = 8
 -- Set colorscheme
 vim.o.termguicolors = true
-require('onedark').load()
+
+require("onedark").load()
 --vim.cmd([[colorscheme onedark]])
 
 -- Set completeopt to have a better completion experience
@@ -450,7 +451,6 @@ local servers = {
 	solargraph = {},
 	-- rust_analyzer = {},
 	-- tsserver = {},
-
 	sumneko_lua = {
 		Lua = {
 			workspace = { checkThirdParty = false },
@@ -641,7 +641,7 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 -- [[ Configure Linting ]]
 require("lint").linters_by_ft = {
 	cpp = { "clangtidy" },
-	ruby = { 'rubocop', },
+	ruby = { "rubocop" },
 	python = { "flake8" },
 }
 

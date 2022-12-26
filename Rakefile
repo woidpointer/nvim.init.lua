@@ -19,6 +19,7 @@ sh cmd.join(" ")
 
   task :setup do
     sh "nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
+    sh "nvim --headless -c 'MasonInstall stylua lua-language-server rust-analyzer clangd solargraph pyright' -c qall"
   end
 
   task :packer do
@@ -26,7 +27,7 @@ sh cmd.join(" ")
   end
 
   task :slink do
-    #puts "#{ENV['HOME']}"
+    # puts "#{ENV['HOME']}"
     #puts pwd()
     cmd = "sudo ln -s #{pwd()}/init.lua #{ENV['HOME']}/.config/nvim"
     sh cmd
@@ -38,3 +39,5 @@ sh cmd.join(" ")
     sh "sudo dpkg -i #{pwd()}/nvim-linux64.deb"
   end
 end
+
+# $ nvim --headless -c "MasonInstall lua-language-server rust-analyzer" -c qall
