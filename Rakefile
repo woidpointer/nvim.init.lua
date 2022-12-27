@@ -1,20 +1,16 @@
-
-
 namespace :dev do
   task :clean do
-    #rm_rf
+    # rm_rf
     nvim_c = "#{ENV['HOME']}/.local/share/nvim"
     rm_rf nvim_c
     rm_rf 'plugin'
 
-=begin
-cmd = []
-cmd << "git clone"
-cmd << "--depth 1"
-cmd << "https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim"
-
-sh cmd.join(" ")
-=end
+    # cmd = []
+    # cmd << "git clone"
+    # cmd << "--depth 1"
+    # cmd << "https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    #
+    # sh cmd.join(" ")
   end
 
   task :setup do
@@ -23,21 +19,19 @@ sh cmd.join(" ")
   end
 
   task :packer do
-    sh "git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    sh 'git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim'
   end
 
   task :slink do
-    # puts "#{ENV['HOME']}"
-    #puts pwd()
-    cmd = "sudo ln -s #{pwd()}/init.lua #{ENV['HOME']}/.config/nvim"
+    cmd = "ln -s #{pwd}/init.lua #{ENV['HOME']}/.config/nvim"
     sh cmd
   end
 
   task :install do
-    rm "#{pwd()}/nvim-linux64.deb"
-    sh "wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb"
-    sh "sudo dpkg -i #{pwd()}/nvim-linux64.deb"
+    rm_f "#{pwd}/nvim-linux64.deb"
+    sh 'wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb'
+    sh "sudo dpkg -i #{pwd}/nvim-linux64.deb"
   end
 
-  task :all => [:packer, :slink, :install, :setup]
+  task all: %i[packer slink install setup]
 end
