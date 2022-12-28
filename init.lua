@@ -635,7 +635,7 @@ vim.keymap.set("n", "<leader>l", vim.cmd.BufferNext)
 vim.keymap.set("n", "<leader>h", vim.cmd.BufferPrevious)
 vim.keymap.set("n", "<leader>bq", vim.cmd.BufferClose) -- [B]uffer [Q]uit
 vim.keymap.set("n", "<leader>bj", function()
-	buffer_number = vim.fn.input("Jump to buffer: ")
+	local buffer_number = vim.fn.input("Jump to buffer: ")
 	vim.cmd.BufferGoto(buffer_number)
 end)
 
