@@ -5,9 +5,8 @@ and ruby as scripting languages.
 
 This configuration is heavily inspired by
 
-[neovim from scratch](https://www.youtube.com/watch?v=w7i4amO_zaE&t=706s)
-and
-(nvim kickstart)[https://github.com/nvim-lua/kickstart.nvim]
+* [neovim from scratch](https://www.youtube.com/watch?v=w7i4amO_zaE&t=706s)
+* [nvim kickstart](https://github.com/nvim-lua/kickstart.nvim)
 
 The configuration is extended for C++/Ruby/Python development use cases and the
 support of cmake environments for that purpose.
@@ -39,11 +38,13 @@ Dependencies for the Linux installation to work like a breeze:
 
 * Create a home folder for the nvim configuration and copy the init.lua into
     that directory:
-    C:\Users\<username>\AppData\Local\nvim
+
+    ```C:\Users\<username>\AppData\Local\nvim```
+
 * Open nvim the first time
 
 This nvim configuration uses the nvim-web-devicons which can't displayed well
-in the normal windows standard installation.
+in the windows default installation.
 
 * Execute the following powershell script https://github.com/ryanoasis/vim-devicons/files/4287085/patchedfonts.zip
 * Open the Visual Studio Developer Commando Prompt and open the nvim.exe
@@ -52,13 +53,9 @@ in the normal windows standard installation.
 
 ## Development of init.lua
 
-The init.lua is usually developed within a docker container because this the intended
-target environment and to avoid influences of the work in progress for my private
-development.
-
-In this case the workflow is somehow semi automated to get a initial clean
-nvim environment. To use the automation the used dev container must support
-rake.
+In order to extend or further develop init.lua, a Docker container is usually
+used, since this also represents the intended target environment and thus the
+further development can take place independently of ongoing developments.
 
 ```console
 
@@ -71,8 +68,4 @@ cd nvim.init.lua
 
 rake dev:clean
 rake dev:all
-
 ```
-
-This commands creates a symbolic link of the init.lua file of the container
-with the one in the repository.
