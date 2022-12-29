@@ -123,7 +123,8 @@ vim.opt.incsearch = true
 vim.opt.backspace = "indent,eol,start"
 
 vim.opt.softtabstop = 2
--- vim.opt.shiftwidth = 2 -- Check with vim-sleuth
+vim.opt.shiftwidth = 2 -- Check with vim-sleuth
+vim.opt.tabstop = 2
 vim.opt.expandtab = true
 
 vim.opt.cursorline = true
