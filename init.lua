@@ -721,6 +721,9 @@ require("formatter").setup({
 		cmake = {
 			require("formatter.filetypes.cmake").cmakeformat,
 		},
+		python = {
+			require("formatter.filetypes.python").autopep8,
+		},
 
 		cpp = {
 			require("formatter.filetypes.cpp").clangformat,
