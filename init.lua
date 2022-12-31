@@ -190,6 +190,7 @@ vim.o.completeopt = "menuone,noselect"
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.o.lcs = "trail:·,tab:»·"
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -466,7 +467,6 @@ local servers = {
 
 -- Setup neovim lua configuration
 require("neodev").setup()
---
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
