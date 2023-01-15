@@ -292,6 +292,8 @@ require("telescope").setup({
 				["<C-d>"] = false,
 			},
 		},
+		layout_strategy = "vertical",
+		layout_config = { height = 0.95, width = 0.85 },
 	},
 })
 
