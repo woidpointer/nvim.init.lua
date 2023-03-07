@@ -459,12 +459,7 @@ local servers = {
 	solargraph = {},
 	-- rust_analyzer = {},
 	-- tsserver = {},
-	sumneko_lua = {
-		Lua = {
-			workspace = { checkThirdParty = false },
-			telemetry = { enable = false },
-		},
-	},
+	lua_ls = {},
 }
 
 -- Setup neovim lua configuration
