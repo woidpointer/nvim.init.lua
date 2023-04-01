@@ -388,7 +388,6 @@ vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { de
 require("nvim-treesitter.configs").setup({
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = {
-    "help",
     "javascript",
     "typescript",
     "c",
@@ -724,8 +723,6 @@ require("null-ls").setup({
     require("null-ls").builtins.diagnostics.rstcheck,
     require("null-ls").builtins.diagnostics.jsonlint,
     require("null-ls").builtins.diagnostics.flake8
-
-
   },
 })
 
