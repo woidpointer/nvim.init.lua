@@ -33,6 +33,10 @@ Dependencies for the Linux installation to work like a breeze:
 * cmake-format (cmake formatting)
 * npm (needed to install pyright by Mason)
 * autopep8 (pip3 install autopep8)
+* codespell
+* rstcheck
+* shellcheck
+* jsonlint  (npm install jsonlint -g)
 
 
 ## Installation on Windows
