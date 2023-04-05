@@ -37,6 +37,7 @@ Dependencies for the Linux installation to work like a breeze:
 * rstcheck
 * shellcheck
 * jsonlint  (npm install jsonlint -g)
+* prettier  (npm install prettier -g)
 
 
 ## Installation on Windows
