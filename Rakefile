@@ -21,8 +21,17 @@ namespace :dev do
 
   task :install do
     rm_f "#{pwd}/nvim-linux64.deb"
-    sh 'wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb'
-    sh "sudo dpkg -i #{pwd}/nvim-linux64.deb"
+
+    Dir.chdir('/tmp') do
+      cmd = ['wget -qO-']
+      cmd << 'https://github.com/neovim/neovim/releases/download/v0.9.1/nvim-linux64.tar.gz'
+      cmd << '|'
+      cmd << "tar xvz --directory #{ENV['HOME']}/.local" # store to different location
+      cmd << '--strip-components=1 ' # but remove the nvim-linux64 folder name
+
+      sh cmd.join(' ')
+    end
+    #sh "sudo dpkg -i #{pwd}/nvim-linux64.deb"
   end
 
   task :setup do
