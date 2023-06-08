@@ -9,35 +9,35 @@ namespace :dev do
     rm_rf nvim_home
     mkdir_p nvim_home
   end
-
-  task :packer do
-    sh 'git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim'
+  
+  task :nvchad do
+    sh 'git clone --depth 1 https://github.com/NvChad/NvChad ~/.config/nvim'
   end
 
   task :slink do
-    cmd = "ln -s #{pwd}/init.lua #{ENV['HOME']}/.config/nvim"
-    sh cmd
+    sh "ln -s #{pwd}/custom/ #{ENV['HOME']}/.config/nvim/lua/"
   end
 
   task :install do
-    rm_f "#{pwd}/nvim-linux64.deb"
+    rm_rf '/tmp/neovim-stable'
 
     Dir.chdir('/tmp') do
-      cmd = ['wget -qO-']
-      cmd << 'https://github.com/neovim/neovim/releases/download/v0.9.1/nvim-linux64.tar.gz'
-      cmd << '|'
-      cmd << "tar xvz --directory #{ENV['HOME']}/.local" # store to different location
-      cmd << '--strip-components=1 ' # but remove the nvim-linux64 folder name
-
+      cmd = ['wget']
+      cmd << 'https://github.com/neovim/neovim/archive/refs/tags/stable.tar.gz'
       sh cmd.join(' ')
+      sh 'tar xf stable.tar.gz'
+
+      Dir.chdir('neovim-stable') do
+        sh 'sudo make CMAKE_BUILD_TYPE=RelWithDebInfo install'
+      end
     end
-    #sh "sudo dpkg -i #{pwd}/nvim-linux64.deb"
   end
 
   task :setup do
-    sh "nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
-    sh "nvim --headless -c 'MasonInstall stylua lua-language-server rust-analyzer clangd solargraph pyright rubocop' -c qall"
+    sh 'nvim --headless "+Lazy! sync" +qa'
   end
 
-  task all: %i[packer slink install setup]
+  task all: %i[install nvchad slink setup]
+
+  task evelop: %i[nvchad slink setup]
 end

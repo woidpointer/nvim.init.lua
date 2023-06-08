@@ -39,6 +39,8 @@ Dependencies for the Linux installation to work like a breeze:
 * jsonlint  (npm install jsonlint -g)
 * prettier  (npm install prettier -g)
 
+* sudo apt install python3-venv gettext
+
 
 ## Installation on Windows
 
