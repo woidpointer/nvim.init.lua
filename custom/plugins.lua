@@ -1,5 +1,31 @@
 local plugins = {
   {
+	  "tpope/vim-rhubarb",
+    lazy = false
+  },
+  {
+	  "tpope/vim-fugitive",
+    lazy = false
+  },
+  {
+	  "mbbill/undotree",
+    lazy = false
+  },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+  },
+  {
+	  "nvim-telescope/telescope.nvim",
+---@diagnostic disable-next-line: unused-local
+    config = function(_, opts)
+      require('telescope').load_extension('fzf')
+    end,
+  },
+  {
+	  "nathom/tmux.nvim",
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
@@ -39,7 +65,7 @@ local plugins = {
   },
   {
     "mfussenegger/nvim-dap",
-    config = function(_, opts) 
+    config = function(_, opts)
       require("core.utils").load_mappings("dap")
     end
   },
