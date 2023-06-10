@@ -90,6 +90,7 @@ local plugins = {
       "cpp",
       "python",
       "ruby",
+      "cmake",
     },
     opts = function()
       return require "custom.configs.null-ls"
@@ -102,6 +103,7 @@ local plugins = {
         "black",
         "clang-format",
         "clangd",
+        "cmake-language-server",
         "debugpy",
         "lua-language-server",
         "mypy",
@@ -109,6 +111,7 @@ local plugins = {
         "rubocop",
         "ruff",
         "solargraph",
+        "cmakelang"
       },
     },
   },
