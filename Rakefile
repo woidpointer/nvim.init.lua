@@ -39,5 +39,5 @@ namespace :dev do
 
   task all: %i[install nvchad slink setup]
 
-  task evelop: %i[nvchad slink setup]
+  task elop: %i[nvchad slink setup]
 end

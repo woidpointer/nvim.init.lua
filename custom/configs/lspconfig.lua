@@ -10,3 +10,6 @@ lspconfig.pyright.setup({
 	capabilities = capabilities,
 	filetypes = {"python"},
 })
+
+lspconfig.clangd.setup{}
+
