@@ -5,8 +5,10 @@ local opts = {
 	sources = {
 		null_ls.builtins.diagnostics.mypy,
 		null_ls.builtins.diagnostics.ruff,
+		null_ls.builtins.diagnostics.rubocop,
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.clang_format,
+		null_ls.builtins.formatting.rubocop,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then

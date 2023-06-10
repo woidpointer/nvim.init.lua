@@ -65,6 +65,7 @@ local plugins = {
   },
   {
     "mfussenegger/nvim-dap",
+---@diagnostic disable-next-line: unused-local
     config = function(_, opts)
       require("core.utils").load_mappings("dap")
     end
@@ -76,6 +77,7 @@ local plugins = {
       "mfussenegger/nvim-dap",
       "rcarriga/nvim-dap-ui",
     },
+---@diagnostic disable-next-line: unused-local
     config = function(_, opts)
       local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").setup(path)
@@ -85,8 +87,9 @@ local plugins = {
   {
     "jose-elias-alvarez/null-ls.nvim",
     ft = {
+      "cpp",
       "python",
-      "cpp"
+      "ruby",
     },
     opts = function()
       return require "custom.configs.null-ls"
@@ -96,14 +99,16 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "clangd",
+        "black",
         "clang-format",
+        "clangd",
         "debugpy",
+        "lua-language-server",
         "mypy",
         "pyright",
-        "lua-language-server",
+        "rubocop",
         "ruff",
-        "black",
+        "solargraph",
       },
     },
   },

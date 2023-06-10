@@ -12,4 +12,13 @@ lspconfig.pyright.setup({
 })
 
 lspconfig.clangd.setup{}
+lspconfig.solargraph.setup{
+  settings = {
+    solargraph = {
+      -- disabling diagnostic by solargraph: using rubocop
+      diagnostics = false
+    }
+  }
+}
+
 
