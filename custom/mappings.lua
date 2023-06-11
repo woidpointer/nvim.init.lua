@@ -1,21 +1,69 @@
 local M = {}
 
+
+-- Disabled default keymappings
+
+M.disabled = {
+  n = {
+    ["<leader>fz"] = "",
+    ["<leader>fw"] = "",
+    ["<leader>cm"] = "",
+    ["<leader>gt"] = "",
+  },
+
+}
+
+M.telescope = {
+  n = {
+    ["<leader>/"] = {
+      "<cmd> Telescope current_buffer_fuzzy_find <CR>",
+      "Find in current buffer"
+    },
+
+    ["<leader>fw"] = {
+      "<cmd> Telescope grep_string <CR>",
+      "[F]ind current [W]ord"
+    },
+
+    ["<leader>fg"] = {
+      "<cmd> Telescope live_grep <CR>",
+      "[F]ind by [G]rep"
+    },
+
+    ["<leader>fc"] = {
+      "<cmd> Telescope git_commits<CR>",
+      "[F]ind git [c]ommit"
+    },
+
+    ["<leader>fbc"] = {
+      "<cmd> Telescope git_bcommits<CR>",
+      "[F]ind git [b]uffer [c]ommits"
+    },
+
+    ["<leader>fd"] = {
+      "<cmd> Telescope diagnostics<CR>",
+      "[F]ind [d]iagnostics"
+    },
+  },
+}
+
+
 M.dap = {
-	plugin = true,
-	n = {
-		["<leader>db"] = {"<cmd> DapToggleBreakpoint <CR>"}
-	}
+  plugin = true,
+  n = {
+    ["<leader>db"] = {"<cmd> DapToggleBreakpoint <CR>"}
+  }
 }
 
 M.dap_python = {
-	plugin = true,
-	n = {
-		["<leader>dpr"] = {
-			function()
-				require('dap-python').test_method()
-			end
-		}
-	}
+  plugin = true,
+  n = {
+    ["<leader>dpr"] = {
+      function()
+        require('dap-python').test_method()
+      end
+    }
+  }
 }
 
 M.tmux = {
@@ -79,11 +127,12 @@ M.undotree = {
   n = {
     ["<leader>u"] = {
       function()
-        vim.cmd.UndotreeToggle(opts)
+        vim.cmd.UndotreeToggle({})
       end,
-      "Toogle UndoTree"
+      "Toggle UndoTree"
     },
   },
 }
+
 
 return M
