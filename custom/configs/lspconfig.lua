@@ -11,7 +11,11 @@ lspconfig.pyright.setup({
 	filetypes = {"python"},
 })
 
-lspconfig.clangd.setup{}
+lspconfig.clangd.setup{
+  capabilities = {
+    offsetEncoding = {"utf-16"}
+  },
+}
 lspconfig.solargraph.setup{
   settings = {
     solargraph = {

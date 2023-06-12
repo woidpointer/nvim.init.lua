@@ -122,6 +122,35 @@ M.zeugs = {
   },
 }
 
+
+M.code_navigation = {
+  n = {
+    ["<leader>jt"] =  {
+      function()
+        vim.lsp.buf.type_definition()
+      end,
+      "[j]ump [t]ype definition "
+    },
+
+    ["<leader>ji"] = {
+      function()
+        vim.lsp.buf.implementation()
+      end,
+      "[j]ump [I]mplementation"
+    },
+
+    ["<leader>jd"] = {
+      function()
+        vim.lsp.buf.implementation()
+      end,
+      "[j]ump [D]efinition"
+    },
+
+  }
+
+}
+
+
 -- vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 M.undotree = {
   n = {
