@@ -9,8 +9,28 @@ M.disabled = {
     ["<leader>fw"] = "",
     ["<leader>cm"] = "",
     ["<leader>gt"] = "",
+    ["<tab>"] = "",
+    ["<S-tab>"] = "",
   },
 
+}
+
+M.tabufline = {
+  n = {
+    ["<leader>l"] = {
+      function()
+        require("nvchad_ui.tabufline").tabuflineNext()
+      end,
+      "Goto next buffer",
+    },
+
+    ["<leader>h"] = {
+      function()
+        require("nvchad_ui.tabufline").tabuflinePrev()
+      end,
+      "Goto prev buffer",
+    },
+  },
 }
 
 M.telescope = {
