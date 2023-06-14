@@ -156,16 +156,22 @@ M.code_navigation = {
       function()
         vim.lsp.buf.implementation()
       end,
-      "[j]ump [I]mplementation"
+      "[j]ump [i]mplementation"
     },
 
     ["<leader>jd"] = {
       function()
-        vim.lsp.buf.implementation()
+        vim.lsp.buf.definition()
       end,
-      "[j]ump [D]efinition"
+      "[j]ump [d]efinition"
     },
 
+    ["K"] = {
+      function()
+        vim.lsp.buf.hover()
+      end,
+      "Lsp Hover"
+    },
   }
 
 }
