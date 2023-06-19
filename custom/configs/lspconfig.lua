@@ -24,5 +24,5 @@ lspconfig.solargraph.setup{
     }
   }
 }
-
+lspconfig.esbonio.setup{}
 
