@@ -55,5 +55,12 @@ vim.wo.signcolumn = "yes"
 -- Softwrap
 vim.o.wrap = false
 vim.o.scrolloff = 8
+
+-- Remove trailing spaces on save
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})
+
 --[[
 --]]

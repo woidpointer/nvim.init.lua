@@ -172,6 +172,29 @@ M.code_navigation = {
       end,
       "Lsp Hover"
     },
+
+    ["<leader>lr"] = {
+      function()
+        vim.lsp.buf.references()
+      end,
+      "[l]ist [r]eferences"
+    },
+
+    ["<leader>li"] = {
+      function()
+        vim.lsp.buf.incoming_calls()
+      end,
+      "[l]ist [i]incomming calls"
+    },
+
+
+    ["<leader>lo"] = {
+      function()
+        vim.lsp.buf.outgoing_calls()
+      end,
+      "[l]ist [o]outgoing calls"
+    },
+
   }
 
 }
