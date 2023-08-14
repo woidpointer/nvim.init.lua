@@ -4,6 +4,10 @@ local plugins = {
     lazy = false
   },
   {
+    'jabirali/vim-tmux-yank',
+    lazy = false
+  },
+  {
 	  "tpope/vim-fugitive",
     lazy = false
   },
