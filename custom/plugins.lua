@@ -1,5 +1,28 @@
 local plugins = {
   {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.dirman"] = { -- Manages Neorg workspaces
+            config = {
+              workspaces = {
+                work = "~/.geistesblitze/work",
+                ideen = "~/.geistesblitze/ideen",
+                erudition = "~/.geistesblitze/erudition",
+              },
+            },
+          },
+        },
+      }
+    end,
+    lazy = false
+  },
+  {
 	  "tpope/vim-rhubarb",
     lazy = false
   },
