@@ -212,5 +212,17 @@ M.undotree = {
   },
 }
 
+M.nvimtree = {
+  n = {
+    ["<leader>np"] = {
+      "<cmd> NvimTreeResize +10 <CR>",
+      "Find in current buffer"
+    },
+    ["<leader>nm"] = {
+      "<cmd> NvimTreeResize -10 <CR>",
+      "Find in current buffer"
+    },
+  },
+}
 
 return M
