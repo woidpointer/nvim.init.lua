@@ -30,6 +30,16 @@ Dependencies for the Linux installation to work like a breeze:
 
 - sudo apt install python3-venv gettext
 
+### Install Nerdfonts
+
+```console
+$ mkdir -p ~/.local/share/fonts
+$ cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
+$ fc-cache ~/.local/share/fonts
+```
+In Gnome Terminal: Preferences -> <your profile> -> select DroidSansM Nerd Font Regular
+
+
 ## Installation on Windows
 
 - Create a home folder for the nvim configuration and copy the init.lua into
