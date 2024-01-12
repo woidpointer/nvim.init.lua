@@ -15,6 +15,10 @@ local opts = {
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.formatting.rubocop,
 		null_ls.builtins.formatting.cmake_format,
+		null_ls.builtins.formatting.gofmt,
+		null_ls.builtins.formatting.goimports_reviser,
+		null_ls.builtins.formatting.golines,
+
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
