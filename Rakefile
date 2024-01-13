@@ -9,7 +9,7 @@ namespace :dev do
     rm_rf nvim_home
     mkdir_p nvim_home
   end
-  
+
   task :nvchad do
     sh 'git clone --depth 1 https://github.com/NvChad/NvChad ~/.config/nvim'
   end
@@ -33,11 +33,21 @@ namespace :dev do
     end
   end
 
-  task :setup do
+  task setup: [:go] do
     sh 'nvim --headless "+Lazy! sync" +qa'
   end
 
   task all: %i[install nvchad slink setup]
 
   task elop: %i[nvchad slink setup]
+
+  task :go do
+    sh 'go install golang.org/x/tools/gopls@latest'
+    sh 'go install github.com/koron/iferr@latest'
+    sh 'go install github.com/segmentio/golines@latest'
+    sh 'go install github.com/fatih/gomodifytags@latest'
+    sh 'go install github.com/josharian/impl@latest'
+    sh 'go install github.com/incu6us/goimports-reviser@latest'
+    sh 'go install github.com/cweill/gotests/gotests@latest'
+  end
 end
