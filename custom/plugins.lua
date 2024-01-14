@@ -35,9 +35,9 @@ local plugins = {
           hover = {
             enabled = false,
           },
-          signature = {
-            enabled = false,
-          },
+          -- signature = {
+          --   enabled = false,
+          -- },
         },
         -- you can enable a preset for easier configuration
         presets = {
