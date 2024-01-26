@@ -49,5 +49,7 @@ namespace :dev do
     sh 'go install github.com/josharian/impl@latest'
     sh 'go install github.com/incu6us/goimports-reviser@latest'
     sh 'go install github.com/cweill/gotests/gotests@latest'
+    sh 'pip3 install pyright'
+    sh 'sudo npm install -g prettier'
   end
 end
