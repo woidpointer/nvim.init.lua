@@ -2,7 +2,7 @@
 vim.opt.guicursor = ""
 vim.opt.relativenumber = true
 vim.opt.ruler = true
-vim.opt.conceallevel = 3
+-- vim.opt.conceallevel = 3
 
 -- highlight search
 vim.opt.incsearch = true
