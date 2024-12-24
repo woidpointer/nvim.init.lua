@@ -1,0 +1,5 @@
+git filter-repo --commit-callback '
+    commit.author_name = "woidpointer"
+    commit.author_email = "woidpointer@gmail.com"
+'
+
